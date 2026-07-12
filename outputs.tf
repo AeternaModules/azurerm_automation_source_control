@@ -1,3 +1,7 @@
+output "automation_source_controls_id" {
+  description = "Map of id values across all automation_source_controls, keyed the same as var.automation_source_controls"
+  value       = { for k, v in azurerm_automation_source_control.automation_source_controls : k => v.id }
+}
 output "automation_source_controls_automatic_sync" {
   description = "Map of automatic_sync values across all automation_source_controls, keyed the same as var.automation_source_controls"
   value       = { for k, v in azurerm_automation_source_control.automation_source_controls : k => v.automatic_sync }
