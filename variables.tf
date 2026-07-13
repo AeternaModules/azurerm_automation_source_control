@@ -24,10 +24,10 @@ EOT
     name                    = string
     repository_url          = string
     source_control_type     = string
-    automatic_sync          = optional(bool) # Default: false
+    automatic_sync          = optional(bool)
     branch                  = optional(string)
     description             = optional(string)
-    publish_runbook_enabled = optional(bool) # Default: true
+    publish_runbook_enabled = optional(bool)
     security = object({
       refresh_token = optional(string)
       token         = string
