@@ -36,7 +36,7 @@ output "automation_source_controls_repository_url" {
 }
 output "automation_source_controls_security" {
   description = "Map of security values across all automation_source_controls, keyed the same as var.automation_source_controls"
-  value       = { for k, v in azurerm_automation_source_control.automation_source_controls : k => v.security if v.security != null && length(v.security) > 0 }
+  value       = { for k, v in azurerm_automation_source_control.automation_source_controls : k => one(v.security) if v.security != null && length(v.security) > 0 }
 }
 output "automation_source_controls_source_control_type" {
   description = "Map of source_control_type values across all automation_source_controls, keyed the same as var.automation_source_controls"
